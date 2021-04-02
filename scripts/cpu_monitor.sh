@@ -1,7 +1,8 @@
 #!/bin/bash
-# This script collects a timestamp and the output of the 'top' command and writes it to
-# /tmp/cpumon.txt
+# This script writes the timestamp and cpu utilization periodically to /tmp/cpumon.txt
 CPUMON_FILE="/tmp/cpumon.txt"
 date >> $CPUMON_FILE
-top -n 1 >> $CPUMON_FILE
+echo >> $CPUMON_FILE
+mpstat >> $CPUMON_FILE
+echo >> $CPUMON_FILE
 
